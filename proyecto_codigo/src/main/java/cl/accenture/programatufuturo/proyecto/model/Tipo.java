@@ -11,4 +11,16 @@ public class Tipo {
         this.nombre = nombre;
         this.sla = sla;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getSla() {
+        return sla;
+    }
 }

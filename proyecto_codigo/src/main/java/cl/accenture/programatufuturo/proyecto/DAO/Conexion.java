@@ -15,7 +15,7 @@ public class Conexion {
             conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/proyecto", "root", "33forever");
             System.out.println("resulto! :)");
             Statement s = conexion.createStatement();
-            ResultSet rs = s.executeQuery("select * from reclamo");
+            ResultSet rs = s.executeQuery("select * from Reclamo");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
 
@@ -24,6 +24,7 @@ public class Conexion {
         }
         return conexion;
     }
+
 
 
 

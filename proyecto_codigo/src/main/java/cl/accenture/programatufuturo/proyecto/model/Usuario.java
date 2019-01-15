@@ -29,4 +29,8 @@ public class Usuario {
     public String getContraseña() {
         return contraseña;
     }
+
+    public int getId() {
+        return id;
+    }
 }
