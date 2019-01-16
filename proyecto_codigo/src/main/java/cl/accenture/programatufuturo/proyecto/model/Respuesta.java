@@ -4,12 +4,13 @@ import java.util.Date;
 
 public class Respuesta {
 
-    private int id;
+    private Integer id;
     private String comentario;
     private Usuario usuario;
+    private Reclamo reclamo;
     private Date fecha;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

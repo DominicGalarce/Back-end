@@ -60,19 +60,19 @@ public class UsuarioDAO {
                 Usuario user = new Usuario();
 
                 // y le entrego los valores que corresponden a sus atributos
-                user.setId(rs.getInt(1));
+                user.setId(rs.getInteger(1));
                 user.setNombre(rs.getString(2));
                 user.setEmail(rs.getString(3));
                 user.setContraseña(rs.getString(4));
                 user.setUltimoLogin(rs.getDate(5));
                 user.setFechaNac(rs.getDate(6));
-                user.setTelefono(rs.getInt(7));
+                user.setTelefono(rs.getInteger(7));
                 user.setNacionalidad(rs.getString(8));
                 user.setRut(rs.getString(9));
                 user.setGenero(rs.getString(10));
-                user.setRol(rs.getRol(11));
+                user.setRol(rs.getInteger(11));
 
-                // añado la cancion a mi list
+                // añado el Usuario a la list
                 usuarios.add(user);
             }
 
@@ -109,19 +109,19 @@ public class UsuarioDAO {
                 Usuario user = new Usuario();
 
                 // y le entrego los valores que corresponden a sus atributos
-                user.setId(rs.getInt(1));
+                user.setId(rs.getInteger(1));
                 user.setNombre(rs.getString(2));
                 user.setEmail(rs.getString(3));
                 user.setContraseña(rs.getString(4));
                 user.setUltimoLogin(rs.getDate(5));
                 user.setFechaNac(rs.getDate(6));
-                user.setTelefono(rs.getInt(7));
+                user.setTelefono(rs.getInteger(7));
                 user.setNacionalidad(rs.getString(8));
                 user.setRut(rs.getString(9));
                 user.setGenero(rs.getString(10));
-                user.setRol(rs.getRol(11));
+                user.setRol(rs.getInteger(11));
 
-                // añado la cancion a mi list
+                // añado añado el Usario a la list
                 usuarios.add(user);
             }
 
@@ -131,8 +131,48 @@ public class UsuarioDAO {
         return usuarios;
     }
 
+    // Obtener Usuario por su id, retorno un Usuario
+    // recibo un int que será el id del Usuario
+    public Usuario ObtenerPorId (Integer id) throws SinConexionException {
+        Usuario user = new Usuario();
 
-    //
+        try {
+            // Selecciono todas las columnas de la tabla Usuario, donde
+            // su id sea equivalente a un valor que entregaré a continuacion
+            final String SQL = "SELECT * FROM Usuario WHERE id = ?";
+            PreparedStatement ps = this.conexion.getConexion().prepareStatement(SQL);
+
+            // aqui ingreso el valor de mi signo de interrogacion, es decir '?'
+            // será igual a id que es el int que me ingresan (id del Usuario)
+            ps.setString(1, id);
+
+            // respuesta almacenada en una variable, de la Query ejecutada en ps.
+            ResultSet rs = ps.executeQuery();
+
+            // Mientras sigan habíendo respuestas
+            while (rs.next()) {
+
+                // A user entrego los valores que corresponden a sus atributos
+                user.setId(rs.getInteger(1));
+                user.setNombre(rs.getString(2));
+                user.setEmail(rs.getString(3));
+                user.setContraseña(rs.getString(4));
+                user.setUltimoLogin(rs.getDate(5));
+                user.setFechaNac(rs.getDate(6));
+                user.setTelefono(rs.getInteger(7));
+                user.setNacionalidad(rs.getString(8));
+                user.setRut(rs.getString(9));
+                user.setGenero(rs.getString(10));
+                user.setRol(rs.getInteger(11));
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
 }
 
 

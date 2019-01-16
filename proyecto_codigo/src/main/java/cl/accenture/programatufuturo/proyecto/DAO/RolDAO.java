@@ -20,7 +20,7 @@ public class RolDAO {
 
             // ingresamos los valores con Set, segun el lugar del signo,
             // y un get de la respuesta recibida según corresponda
-            ps.setInt(1, x.getId());
+            ps.setInteger(1, x.getId());
             ps.setString(2, x.getNombre());
 
             // Ejecutamos el almacenamiento
@@ -55,7 +55,7 @@ public class RolDAO {
                 Rol r = new Rol();
 
                 // Asigno sus parametros al objeto previamente creado
-                r.setId(rs.getIng(1));
+                r.setId(rs.getInteger(1));
                 r.setNombre(rs.getString(2));
 
                 // añado mi Rol con sus atributos ya ingresados en mi list

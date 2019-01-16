@@ -1,15 +1,15 @@
 package cl.accenture.programatufuturo.proyecto.model;
 
 public class Rol {
-    private int id;
+    private Integer id;
     private String nombre;
 
-    public Rol(int id, String nombre) {
+    public Rol(Integer id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -24,4 +24,6 @@ public class Rol {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public String toString
 }

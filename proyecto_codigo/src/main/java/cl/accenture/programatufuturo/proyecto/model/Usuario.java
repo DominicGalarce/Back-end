@@ -3,12 +3,12 @@ package cl.accenture.programatufuturo.proyecto.model;
 import java.util.Date;
 
 public class Usuario {
-    private int id, telefono;
+    private Integer id, telefono;
     private String nombre, email, contraseña, nacionalidad, rut, genero;
     private Date ultimoLogin, fechaNac;
     private Rol rol;
 
-    public Usuario(int id, int telefono, String nombre, String email, String contraseña, String nacionalidad, String rut, String genero, Date ultimoLogin, Date fechaNac, Rol rol) {
+    public Usuario(Integer id, Integer telefono, String nombre, String email, String contraseña, String nacionalidad, String rut, String genero, Date ultimoLogin, Date fechaNac, Rol rol) {
         this.id = id;
         this.nombre = nombre;
         this.rut = rut;
@@ -26,7 +26,7 @@ public class Usuario {
         this.id = id;
     }
 
-    public int getTelefono() {
+    public Integer getTelefono() {
         return telefono;
     }
 
@@ -106,7 +106,7 @@ public class Usuario {
         return contraseña;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 }
