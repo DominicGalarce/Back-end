@@ -2,7 +2,7 @@ package cl.accenture.programatufuturo.proyecto.model;
 
 public class Tipo {
 
-    private int id;
+    private Integer id;
     private String nombre;
     private int sla;
 

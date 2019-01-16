@@ -8,6 +8,10 @@ public class Rol {
         this.id = id;
         this.nombre = nombre;
     }
+    public Rol(){
+        this.id=0;
+        this.nombre="";
+    }
 
     public Integer getId() {
         return id;
@@ -25,5 +29,5 @@ public class Rol {
         this.nombre = nombre;
     }
 
-    public String toString
+
 }

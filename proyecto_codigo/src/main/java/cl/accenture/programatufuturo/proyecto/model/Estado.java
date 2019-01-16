@@ -9,6 +9,10 @@ public class Estado {
         this.id = id;
         this.nombre = nombre;
     }
+    public Estado(){
+        this.id=0;
+        this.nombre="";
+    }
 
     public int getId() {
         return id;
